@@ -1,6 +1,6 @@
-# Automation of data cleanup
+# Automation of Data Cleanup on Python Colab
 
-# Importing all necessary libraries
+## Importing all the necessary libraries
 from google.colab import auth
 auth.authenticate_user()
 import pandas as pd
@@ -8,27 +8,29 @@ import gspread
 import matplotlib.pyplot as plt
 from oauth2client.client import GoogleCredentials
 
-# Connecting with my Google account
+## Connecting with your Google account
 gc = gspread.authorize(GoogleCredentials.get_application_default())
 
-# Importing the Google sheets API
+## Importing the Google sheets API
 ws = gc.open_by_url('https://docs.google.com/spreadsheets/url').worksheet('sheetname')
 
-# get_all_values gives a list of rows.
+## From the list of rows
 rows = ws.get_all_values()
 
-# Converting to a DataFrame and selecting all rows starting from the 1st one
+## Convert all rows to a DataFrame
 df = pd.DataFrame.from_records(rows[1:],columns=rows[0])
 
-# Deleting the dots "." in col1
-df["col1"] = df["col1"].apply(lambda x: x.replace(".", ""))
+## Delete all the dots "." from a column x
+df["colx"] = df["colx"].apply(lambda x: x.replace(".", ""))
 
-# Delete unwanted columns 4 and 5
+## Delete unwanted columns 4 and 5
 to_drop = ['col4','col5']
 df.drop(to_drop, inplace = True, axis = 1)
 
-# Reordering the columns in the desired order
+## Reordering the columns in the desired order
 df = df[['col2','col1','col3']]
 
-# Displaying the dataframe
+## Displaying the dataframe
 display(df)
+
+## Your clean Datafram is now ready to work with
