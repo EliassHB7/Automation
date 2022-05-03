@@ -37,7 +37,7 @@ df = df[['col2','col1','col3']]
 ### Displaying your cleaned data
 display(df)
 
-## Part 2: Performing a vlookup
+## Part 2: Performing a vlookup from another google sheets
 
 ### Importing a mapping sheet
 ws2 = gc.open_by_url('https://docs.google.com/spreadsheets/url').worksheet('sheet2')
