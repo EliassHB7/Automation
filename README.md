@@ -1,5 +1,7 @@
 # Automation of Data Cleanup on Python Colab
 
+## Part 1: Importing and cleaning your database
+
 ### Importing all the necessary libraries
 from google.colab import auth
 auth.authenticate_user()
