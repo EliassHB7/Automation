@@ -37,7 +37,7 @@ df = df[['col2','col1','col3']]
 ### Displaying your cleaned data
 display(df)
 
-## Part 2: vlookup and file download automation
+## Part 2: Performing a vlookup
 
 ### Importing a mapping sheet
 ws2 = gc.open_by_url('https://docs.google.com/spreadsheets/url').worksheet('sheet2')
@@ -63,6 +63,10 @@ df["Col4"] = df["Col4"].astype(str) + df["Col5"].astype(str)
 to_drop = ['Col5','Col7','Col8']
 df.drop(to_drop, inplace = True, axis = 1)
 display(df)
+
+### Your data is now clean, with the vlookup rendered properly and unnecessary columns deleted
+
+## Part 3: Download the new clean database:
 
 ### Downloading the file as a CSV (note that it could be any other format)
 df.to_csv('automated python.csv',encoding = 'utf-8-sig', index=False) 
