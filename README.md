@@ -68,4 +68,4 @@ display(df)
 df.to_csv('automated python.csv',encoding = 'utf-8-sig', index=False) 
 files.download('automated python.csv')
 
-## The file is now downloaded on your hard drive computer
+## The file is now downloaded on your hard drive computer as CSV
