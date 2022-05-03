@@ -39,7 +39,7 @@ to_drop = ['col4','col5']
 df.drop(to_drop, inplace = True, axis = 1)
 
 ### Reordering the columns in the desired order
-df = df[['col2','col1','col3']]
+df = df[['col2','col1','col3','col4','col5']]
 
 ### Displaying your cleaned data
 display(df)
@@ -56,19 +56,19 @@ rows2 = ws2.get_all_values()
 mapping = {x[0]:x[1] for x in rows2}
 
 ### Performing the vlookup (note that there are other ways to perform a vlookup such as joins)
-df['Col1'] = df['Col1'].map(mapping)
+df['col1'] = df['col1'].map(mapping)
 
 ### Replacing / Deleting any values from certain columns:
 
-df["Col1"] = df["Col1"].apply(lambda x: x.replace("blabla", "blibli"))
+df["col1"] = df["col1"].apply(lambda x: x.replace("blabla", "blibli"))
 
-df["Col2"] = df["Col2"].apply(lambda x: x.replace("bleble", ""))
+df["col2"] = df["col2"].apply(lambda x: x.replace("bleble", ""))
 
 ### Concatenating 2 columns: 
-df["Col4"] = df["Col4"].astype(str) + df["Col5"].astype(str)
+df["col4"] = df["col4"].astype(str) + df["col5"].astype(str)
 
-### Deleting any unnecessary columns:
-to_drop = ['Col5','Col7','Col8']
+### Deleting any unnecessary columns again after the merger of columns:
+to_drop = ['col3']
 df.drop(to_drop, inplace = True, axis = 1)
 display(df)
 
