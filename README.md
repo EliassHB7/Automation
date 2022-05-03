@@ -4,12 +4,19 @@
 
 ### Importing all the necessary libraries
 from google.colab import auth
+
 auth.authenticate_user()
+
 import pandas as pd
+
 import gspread
+
 import matplotlib.pyplot as plt
+
 from oauth2client.client import GoogleCredentials
+
 import numpy as np
+
 from google.colab import files
 
 ### Connecting with your Google account
@@ -54,6 +61,7 @@ df['Col1'] = df['Col1'].map(mapping)
 ### Replacing / Deleting any values from certain columns:
 
 df["Col1"] = df["Col1"].apply(lambda x: x.replace("blabla", "blibli"))
+
 df["Col2"] = df["Col2"].apply(lambda x: x.replace("bleble", ""))
 
 ### Concatenating 2 columns: 
