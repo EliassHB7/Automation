@@ -1,4 +1,4 @@
-# Automation of Data Cleanup on Python Colab
+# Automation of Data Cleanup on Python
 
 ## Part 1: Importing and cleaning your database
 
